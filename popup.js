@@ -1,8 +1,21 @@
 document.addEventListener('DOMContentLoaded', documentEvents, false);
 
-function write_action(amt, cat, subCat, source, comments) {
-  // TODO: Create google app script to write these values into transaction sheet
-  console.log(amt.value, cat.value, subCat.value, source.value, comments.value);
+function write_action(amt, cat, subCat, source, comments,location) {
+  var data = [subCat.value, amt.value, source.value, cat.value, comments.value, location.value].join('|||'),
+    xhttp = new XMLHttpRequest();
+  document.getElementById("write").className = 'hidden';
+  document.getElementById("loading").className = 'show';
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("loading").className = 'hidden';
+      document.getElementById("write").className = 'container-fluid show';
+      var result = this.responseText;
+      document.getElementById("transForm").reset();
+      alert("Successfully Added" + data.split('|||'))
+    }
+  };
+  xhttp.open("GET", "https://script.google.com/macros/s/AKfycbzp29Qzo_oLjAgi2UnhkRDl798lXFiU99Jy-aqXIuuE8NF0Ejlq/exec?row=" + data, true);
+  xhttp.send();
 }
 
 function read_action() {
@@ -42,11 +55,12 @@ function documentEvents() {
         cat = document.getElementById('category'),
         subCat = document.getElementById('subCategory'),
         source = document.getElementById('source'),
+        location = document.getElementById('location'),
         comments = document.getElementById('comments');
         if(cat.value == "Misc."){
           subCat = document.getElementById('miscSubCategory')
         }
-      write_action(amt, cat, subCat, source, comments);
+      write_action(amt, cat, subCat, source, comments, location);
     });
   document.getElementById('showBal').addEventListener('click',
     function() {
