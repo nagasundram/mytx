@@ -1,0 +1,56 @@
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+body {
+  background: black;
+  padding: 5px;
+}
+
+a {
+  color: cyan;
+  background-color: rgba(0, 255, 255, 0.5) !important;
+}
+a:hover {
+  color: cyan;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  text-decoration: none;
+}
+.popup-box {
+  width: 400px;
+  color: cyan;
+  padding: 20px;
+  border: 1px solid cyan;
+  border-radius: 9px;
+  height: -webkit-fill-available;
+}
+.form-control {
+  background: transparent;
+  border: 2px solid rgba(0, 255, 255, 0.9);
+  color: cyan !important;
+  border-radius: 9px;
+  box-shadow: 2px 2px 4px cyan;
+}
+.form-control:focus {
+  background: black !important;
+  color: cyan !important;
+  text-shadow: 2px 2px 4px cyan;
+}
+.btn {
+  background: transparent;
+  color: cyan;
+  border-radius: 9px;
+  border: 2px solid rgba(0, 255, 255, 0.9);
+  padding: 0px 5px 0px 5px;
+}
+.submitBtn {
+  float: right;
+  box-shadow: 2px 2px 4px cyan;
+}
+::placeholder {
+    color: cyan !important;
+}

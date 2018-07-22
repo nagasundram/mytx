@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Transaction Extension</title>
   <script src="popup.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <style>
-  .hidden {
-    display: none !important;
-  }
-
-  .show {
-    display: block !important;
-  }
-  </style>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/loading.css">
 </head>
 
 <body>
-  <div style="width: 400px;" class="container-fluid" id="write">
-    <br>
+  <div class="container-fluid popup-box" id="write">
     <h4>Transaction</h4>
     <form id="transForm">
       <div class="form-group">
-        <input class="form-control" id="amount" placeholder="Amount" required>
+        <input class="form-control" id="amount" placeholder="Amount" required autocomplete="off">
       </div>
       <div class="form-group">
         <select id="category" class="form-control">
@@ -57,22 +48,26 @@
         <textarea class="form-control" id="comments" placeholder="Comments"></textarea>
       </div>
       <div class="form-group">
-        <input class="form-control" id="location" placeholder="Location" required>
+        <input class="form-control" id="location" placeholder="Location" required autocomplete="off">
       </div>
-      <button type="submit" class="btn btn-success btn-default">Submit</button>
+      <button type="submit" class="btn submitBtn">Submit</button>
     </form>
     <br>
-    <h6><a href="javascript:;" id="showBal">Show Balances</a></h6>
+    <h6><a href="javascript:;" id="showBal" class="btn">Show Balances</a></h6>
   </div>
-  <div style="width: 400px;" class="container-fluid">
-    <div id="read" class="hidden">
+  <div class="hidden" id="read">
       <div id='result'></div>
-      <h6><a href="javascript:;" id="back">Back</a></h6>
+      <h6><a href="javascript:;" id="back" class="btn">Back</a></h6>
+  </div>
+  <div class="hidden" id="loading">
+    <br>
+    <p class="line-item animation"></p>
+    <p class="line-item animation"></p>
+    <p class="line-item animation"></p>
+    <p class="line-item animation"></p>
+    <p class="line-item animation"></p>
+    <p class="line-item animation red"></p>
+    <p class="line-item animation red"></p>
     </div>
-  </div>
-  <div style="width: 400px;" class="container-fluid centre">
-    <img src="img/loading.gif" class="hidden" id="loading" style="margin-left: 85px;" />
-  </div>
 </body>
-
 </html>

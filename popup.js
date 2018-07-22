@@ -4,11 +4,11 @@ function write_action(amt, cat, subCat, source, comments,location) {
   var data = [subCat.value, amt.value, source.value, cat.value, comments.value, location.value].join('|||'),
     xhttp = new XMLHttpRequest();
   document.getElementById("write").className = 'hidden';
-  document.getElementById("loading").className = 'show';
+  document.getElementById("loading").className = 'container-fluid popup-box show';
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("loading").className = 'hidden';
-      document.getElementById("write").className = 'container-fluid show';
+      document.getElementById("write").className = 'container-fluid popup-box show';
       var result = this.responseText;
       document.getElementById("transForm").reset();
       alert("Successfully Added" + data.split('|||'))
@@ -21,18 +21,18 @@ function write_action(amt, cat, subCat, source, comments,location) {
 function read_action() {
   var xhttp = new XMLHttpRequest();
   document.getElementById("write").className = 'hidden';
-  document.getElementById("loading").className = 'show';
+  document.getElementById("loading").className = 'container-fluid popup-box show';
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("loading").className = 'hidden';
-      document.getElementById("read").className = 'show';
+      document.getElementById("read").className = 'container-fluid popup-box show';
       var obj = this.responseText.split(',');
       var result = "<br>"
       obj.forEach(function(item, index) {
         if (item.indexOf('Credit') < 0) {
-          result += '<p class="bg-success text-center">' + item + '</p>'
+          result += '<p class="line-item">' + item + '</p>'
         } else {
-          result += '<p class="bg-danger  text-center">' + item + '</p>'
+          result += '<p class="line-item red">' + item + '</p>'
         }
       })
       document.getElementById("result").innerHTML = result;
@@ -43,7 +43,7 @@ function read_action() {
 }
 
 function back_action() {
-  document.getElementById("write").className = 'container-fluid show';
+  document.getElementById("write").className = 'container-fluid popup-box show';
   document.getElementById("read").className = 'hidden';
 }
 
