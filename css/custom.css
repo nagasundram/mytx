@@ -12,45 +12,47 @@ body {
 }
 
 a {
-  color: cyan;
-  background-color: rgba(0, 255, 255, 0.5) !important;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5) !important;
 }
 a:hover {
-  color: cyan;
+  color: white;
   background-color: rgba(0, 0, 0, 0.5) !important;
   text-decoration: none;
 }
 .popup-box {
   width: 400px;
-  color: cyan;
+  color: white;
   padding: 20px;
-  border: 1px solid cyan;
-  border-radius: 9px;
+  /*border: 1px solid white;*/
+  /*border-radius: 9px;*/
   height: -webkit-fill-available;
 }
 .form-control {
   background: transparent;
-  border: 2px solid rgba(0, 255, 255, 0.9);
-  color: cyan !important;
-  border-radius: 9px;
-  box-shadow: 2px 2px 4px cyan;
+  /*border: 2px solid rgba(255, 255, 255, 0.9);*/
+  border: none !important;
+  color: white !important;
+  /*border-radius: 9px;*/
+  box-shadow: 0px 2px 4px white;
 }
 .form-control:focus {
   background: black !important;
-  color: cyan !important;
-  text-shadow: 2px 2px 4px cyan;
+  color: white !important;
+  text-shadow: 2px 2px 4px white;
+  border: none !important;
 }
 .btn {
   background: transparent;
-  color: cyan;
+  color: white;
   border-radius: 9px;
-  border: 2px solid rgba(0, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   padding: 0px 5px 0px 5px;
 }
 .submitBtn {
   float: right;
-  box-shadow: 2px 2px 4px cyan;
+  box-shadow: 2px 2px 4px white;
 }
 ::placeholder {
-    color: cyan !important;
+    color: white !important;
 }
